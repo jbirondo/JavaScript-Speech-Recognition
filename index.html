@@ -31,14 +31,19 @@
     }
 
     if(transcript === "play Final Fantasy"){
-      // let audioPromise = document.querySelector('.win').play()
-      // audioPromise.currentTime = 0;
-      // console.log("hello")
-      // if (audioPromise !== undefined){
-      //   audioPromise.then(function(){}).catch(function(error){})
-      // }
-      let audio = document.querySelector('.win')
-      audio.play()
+      let audioPromise = document.querySelector('.win').play()
+      audioPromise.currentTime = 0;
+      if (audioPromise !== undefined){
+        audioPromise.then(function(){}).catch(function(error){})
+      }
+    }
+
+    if(transcript === "play Pokemon"){
+      let audioPromise = document.querySelector('.pokemon').play()
+      audioPromise.currentTime = 0;
+      if (audioPromise !== undefined){
+        audioPromise.then(function(){}).catch(function(error){})
+      }
     }
 
     p.textContent = transcript
@@ -96,5 +101,6 @@
     }
   </style>
   <audio class="win" src="sounds/FFVI_Victory_Fanfare.ogg" hidden></audio>
+  <audio class="pokemon" src="sounds/pokemon-battle.mp3" hidden></audio>
 </body>
 </html>
