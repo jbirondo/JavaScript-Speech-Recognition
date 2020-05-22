@@ -25,6 +25,22 @@
       .map(result => result.transcript)
       .join('')
 
+    if(transcript === "change the background to red"){
+      let body = document.querySelector('body')
+      body.style.setProperty('background', 'red')
+    }
+
+    if(transcript === "play Final Fantasy"){
+      // let audioPromise = document.querySelector('.win').play()
+      // audioPromise.currentTime = 0;
+      // console.log("hello")
+      // if (audioPromise !== undefined){
+      //   audioPromise.then(function(){}).catch(function(error){})
+      // }
+      let audio = document.querySelector('.win')
+      audio.play()
+    }
+
     p.textContent = transcript
 
     if(e.results[0].isFinal) {
@@ -79,6 +95,6 @@
       border-color: transparent #efe4e4;
     }
   </style>
-
+  <audio class="win" src="sounds/FFVI_Victory_Fanfare.ogg" hidden></audio>
 </body>
 </html>
